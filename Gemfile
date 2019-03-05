@@ -49,6 +49,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+group :production do
+  gem "rails_12factor", "0.0.2"
+end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
