@@ -1,0 +1,27 @@
+
+
+<%if @students.blank? %>
+  <p>There are no students</p>
+<%else %>
+
+
+    <div class="row">
+      <%@students.each do |student| %>
+        <div class="card col-lg-3">
+          <div class="card-header bg-primary"><%= link_to student.name.upcase, edit_student_path(student) ,style: "color: white;font-weight: bold"%></div>
+          <div class="card-body">
+            <div><%=student.birthday %></div>
+            <div><%=student.address %></div>
+            <div><%=student.phone_number %></div>
+          </div>
+          <div class="card-footer">
+            <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } ,remote: true,class: "col-sm-12 btn btn-danger destroy_student"%>
+          </div>
+        </div>
+      <%end %>
+    </div>
+
+
+<%end %>
+<%= link_to '+ New Student', new_student_path ,class: "btn btn-success btn-lg"%>
+
