@@ -5,7 +5,6 @@
     <div class="col-md-4 ">
 
 
-
 <%= form_for(@student, remote: true) do |form| %>
 
 
@@ -15,7 +14,7 @@
   </div>
   <div class="field">
     <%= form.label :birthday %>
-    <%= form.date_select :birthday ,class: "form-control"%>
+    <%= form.date_select :birthday ,class: "form-control birthday",order: [:day,:month,:year]%>
   </div>
 
   <div class="field">
