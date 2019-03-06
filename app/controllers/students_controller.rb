@@ -15,7 +15,8 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    redirect_to students_path,notice: "#{@student.name} was created !" if @student.save
+    redirect_to students_path, notice: "#{@student.name} was created !" if @student.save
+
   end
   def update
     redirect_to students_path,notice: "#{@student.name} was updated !"  if @student.update(student_params)
@@ -24,9 +25,9 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     respond_to do |format|
-      format.html { redirect_to students_path, notice: 'Task was successfully destroyed.' }
+      format.html { redirect_to students_path, notice: 'Student was successfully destroyed.' }
       format.json { head :no_content }
-      format.js { render layout: false }
+      format.js {}
     end
 
   end
